@@ -6,7 +6,7 @@
     2.1. [General Workflow](#2122)<br>
     2.2. [RNA-Seq Workflow - Preparing for DGE](#2222)<br>
     2.3. [Methods and Methods comparison](#2322)
-4. [Gene Set Enrichment Analysis: How?](#233)
+3. [Gene Set Enrichment Analysis: How?](#233)
 
 
 
@@ -101,7 +101,7 @@ Before we can use GSEA, we first need to perform our differential gene expressio
 
 From previous chapters, we should already be familiar with the general RNA sequencing analysis pipeline outlined above, but just for the sake of review let’s discuss some of the key steps. We’ll begin with our RNA-seq data as sequence reads and run these through FASTQC for quality control. Next, we’ll map our reads to the reference genome, and often this step will be conducted using STAR. Lastly, before DGE we will do expression quantification, which can be performed in featureCounts. [BENG183 Lecture] If any of these steps are unclear, feel free to take a minute and revisit these earlier topics. At this stage, you’re ready to take the next step with differential gene expression analysis - so let’s dive into the methods that make it all work.
 
-#### 2) Methods and Methods Comparison<a name="2322"></a>
+#### 3) Methods and Methods Comparison<a name="2322"></a>
 
 As touched on earlier, there’s a wide range of tools that can be used for DGE analysis. Some of the more common and well-known tools include DESeq2, EdgeR, and limma-voom, but there’s others as well, each with its own functionality. 
 
