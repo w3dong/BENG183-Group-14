@@ -96,37 +96,27 @@ Let's dive into details one by one.
 
 Before we can use GSEA, we first need to perform our differential gene expression analysis separately. Luckily, DGE is a well established protocol with a plethora of tools available to help us unlock the potential of differential analysis. While we’ll dive deeper into some of these tools later as well as how you can make the seemingly difficult decision on which one to pick, let’s first discuss some vital steps leading up to DGE analysis.
 
-<p align="center"><img src="./assets/de_workflow.png" width="500" /></p> 
+<p align="center"><img src="./assets/de_workflow.png" width="300" /></p> 
 
 From previous chapters, we should already be familiar with the general RNA sequencing analysis pipeline outlined above, but just for the sake of review let’s discuss some of the key steps. We’ll begin with our RNA-seq data as sequence reads and run these through FASTQC for quality control. Next, we’ll map our reads to the reference genome, and often this step will be conducted using STAR. Lastly, before DGE we will do expression quantification, which can be performed in featureCounts. [BENG183 Lecture] If any of these steps are unclear, feel free to take a minute and revisit these earlier topics. At this stage, you’re ready to take the next step with differential gene expression analysis - so let’s dive into the methods that make it all work.
 
-## 2.3.3 Hi-C<a name="233"></a>
-Hi-C is the highest through-put version of 3C-derived technologies. Due to the decreasing cost of 2nd generation sequencing, hi-c is widely used.
+## 2.2 Methods and Methods Comparison<a name="233"></a>
 
-The principle of Hi-C can be illustrated as:
-![](/assets/hic.gif)
+As touched on earlier, there’s a wide range of tools that can be used for DGE analysis. Some of the more common and well-known tools include DESeq2, EdgeR, and limma-voom, but there’s others as well, each with its own functionality. 
 
+ <p align="center"><img src="./assets/dgetools.png" width="500" /></p> 
 
-##### Hi-C critical steps [8] 
-- Fixation: keep DNA conformed
-- Digestion: enzyme frequency and penetratin
-- Fill-in: biotin for junction enrichment
-- Ligation: freeze interactions in sequence
-- Biotin removal: junctions only
-- Fragment size: small fragments sequence better
-- Adapter ligation: paired-end and indexing
-- PCR: create enough material for flow cell
+While these methods do have some differences in their exact procedure, they all follow a general workflow and can be successfully applied for DGE. Additionally, most DGE tools can be compatible with GSEA, so there’s not really any major restrictions on which one you can select. For now, we’re going to narrow down our focus to just DESeq2 and EdgeR - both well established tools that are part of the R programming language.
 
-##### Hi-C derived techniques 
-- Hi-C original: [Lieberman-Aiden et al., Science 2010](doi: 10.1126/science.1181369)
-- Hi-C 1.0: [Belton-JM et al., Methods 2012](doi: 10.1016/j.ymeth.2012.05.001)
-- In situ Hi-C: [Rao et al., Cell 2014](doi: 10.1016/j.cell.2014.11.021)
-- Single cell Hi-C: [Nagano et al., Genome Biology 2015](https://doi.org/10.1186/s13059-015-0753-7)
-- DNase Hi-C [Ma, Wenxiu, Methods et al](https://www.ncbi.nlm.nih.gov/pubmed/25437436)
-- Hi-C 2.0: [Belaghzal et al., Methods 2017](https://www.ncbi.nlm.nih.gov/pubmed/28435001)
-- DLO-Hi-C: [Lin et al., Nature Genetics 2018](https://doi.org/10.1038/s41588-018-0111-2)
-- Hi-C improving: [Golloshi et al., Methods 2018](https://www.biorxiv.org/content/biorxiv/early/2018/02/13/264515.full.pdf)
-- Arima 1-day Hi-C: [Ghurye et al., BioRxiv 2018](https://www.biorxiv.org/content/early/2018/02/07/261149)
+<p align="center"><img src="./assets/dge_comparison.png" width="500" /></p> 
+
+As for that general workflow, we’re going to begin with count data which tells us the number of sequence reads originating from each gene. Higher counts will mean more expression, and lower counts the opposite. Normalization is next. DESeq2 uses median of ratios for normalization, whereas EdgeR takes trimmed mean of M values (TMM) [6]. These aren’t extremely different, but this does demonstrate some of the minor differences that keep the two tools unique. 
+
+Both DESeq2 and EdgeR will model read counts as a negative binomial distribution, and with our filtered, normalized, and high quality counts will run statistical tests to calculate fold changes, p-values, and other measures to represent the level of significance of expression differences. An example table output from DESeq2 is shown below. As we can see, we have p-values for each gene which will allow us to judge significance. 
+
+<p align="center"><img src="./assets/deseq2output.png" width="500" /></p> 
+
+Once we’ve arrived here, actually understanding the output of our DGE analysis can be a daunting task in itself. Don’t worry! GSEA is an easy to use software that can help you analyze, annotate, and interpret enrichment results.
 
 ## 2.3.4 ChIA-PET<a name="234"></a> 
 ChIA-PET is another method that combines ChIP and pair-end sequencing to analysis the chromtin interaction. It allows for targeted binding factors such as: estrogen receptor alpha, CTCF-mediated loops, RNA polymerase II, and a combination of key architectural factors. on the one hand, it has the benefit of achieving a higher resolution compared to Hi-C, as only ligation products involving the immunoprecipitated molecule are sequenced, on the other hand, ChIA-PET has systematic biases due to ChIP process:
@@ -205,7 +195,7 @@ ChIA-PET is another method that combines ChIP and pair-end sequencing to analysi
 
 [5] Comparing experimental conditions: differential expression analysis. https://biocorecrg.github.io/CRG_Bioinformatics_for_Biologists/differential_gene_expression.html.<br>
 
-[6] Lieberman-Aiden E, van Berkum NL, Williams L, Imakaev M, Ragoczy T, Telling A, et al. Comprehensive mapping of long-range interactions reveals folding principles of the human genome. Science 2009;326(5950):289–93.<br>
+[6] Differential gene expression (DGE) analysis. https://hbctraining.github.io/Training-modules/planning_successful_rnaseq/lessons/sample_level_QC.html
 
 [7] Fullwood, M.J. et al. (2009) An oestrogen-receptor-alpha-bound human chromatin interactome. Nature 462, 58–64.<br>
 
