@@ -3,9 +3,10 @@
     1.1. [Differential Expression and Differential Analysis of Genes](#2311)<br>
     2.2. [Gene Set Enrichment Analysis](#2312)
 2. [Differential Gene Expression Analysis: How?](#232)<br>
-    2.1. [General Workflow](#2321)<br>
-    2.2. [Methods and Methods comparison](#2322)
-3. [Gene Set Enrichment Analysis: How?](#233)
+    2.1. [General Workflow](#2122)<br>
+    2.2. [RNA-Seq Workflow - Preparing for DGE](#2222)<br>
+    2.3. [Methods and Methods comparison](#2322)
+4. [Gene Set Enrichment Analysis: How?](#233)
 
 
 
@@ -56,7 +57,7 @@ From the concept review, you probably can see how differential gene expression a
 
 To check if a set of genes is expressed differentially, we need to determine if a gene is expressed differentially first. Because we want to focus on GSEA in this chapter, let's take some time to go through the general workflow of DGE (differential gene expression analysis). 
 
-#### 1) General Workflow <a name="2321"></a>
+#### 1) General Workflow <a name="2122"></a>
 The procedure of DGE can be generally concluded as follow: 
 - 1. Normalization 
 - 2. Statistical Test
@@ -92,7 +93,7 @@ Let's dive into details one by one.
 
 > Based on these general ideas, we'll walk through one of the most popular techniques for Differential Analysis and then briefly introduce other methods, as well as how to choose tools that work best for GSEA.
 
-## 2.1 General Workflow<a name="2321"></a>
+## 2.2 RNA-Seq Workflow - Preparing for DGE<a name="2222"></a>
 
 Before we can use GSEA, we first need to perform our differential gene expression analysis separately. Luckily, DGE is a well established protocol with a plethora of tools available to help us unlock the potential of differential analysis. While we’ll dive deeper into some of these tools later as well as how you can make the seemingly difficult decision on which one to pick, let’s first discuss some vital steps leading up to DGE analysis.
 
