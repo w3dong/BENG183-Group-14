@@ -79,7 +79,7 @@ Let's dive into details one by one.
 
    We only care about **evident** change in expression level under different conditions. Thus, to make sure the difference in value is not caused by chance, we need to conduct a statistical test, usually a t-test, to compare and make sure the change in expression level under different conditions is significant.
 
-   <p align="center"><img src="./assets/DGE.png" width="250" /></p> [5]
+   <p align="center"><img src="./assets/DGE.png" width="400" /></p> [5]
 
 4. **P Value Check**</a>
 
