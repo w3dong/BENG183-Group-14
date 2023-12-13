@@ -104,7 +104,7 @@ From previous chapters, we should already be familiar with the general RNA seque
 
 As touched on earlier, there’s a wide range of tools that can be used for DGE analysis. Some of the more common and well-known tools include DESeq2, EdgeR, and limma-voom, but there’s others as well, each with its own functionality. 
 
- <p align="center"><img src="./assets/dgetools.png" width="500" /></p> 
+ <p align="center"><img src="./assets/dge_tools.png" width="500" /></p> 
 
 While these methods do have some differences in their exact procedure, they all follow a general workflow and can be successfully applied for DGE. Additionally, most DGE tools can be compatible with GSEA, so there’s not really any major restrictions on which one you can select. For now, we’re going to narrow down our focus to just DESeq2 and EdgeR - both well established tools that are part of the R programming language.
 
