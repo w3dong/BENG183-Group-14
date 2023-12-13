@@ -106,7 +106,7 @@ As touched on earlier, there’s a wide range of tools that can be used for DGE 
 
  <p align="center"><img src="./assets/dge_tools.png" width="500" /></p> 
 
-While these methods do have some differences in their exact procedure, they all follow a general workflow and can be successfully applied for DGE. Additionally, most DGE tools can be compatible with GSEA, so there’s not really any major restrictions on which one you can select. For now, we’re going to narrow down our focus to just DESeq2 and EdgeR - both well established tools that are part of the R programming language.
+While these methods do have some differences in their exact procedure, they all follow a general workflow and can be successfully applied for DGE. Additionally, most DGE tools can be compatible with GSEA, so there’s not really any major restrictions on which one you can select. For now, we’re going to narrow down our focus to just DESeq2 and EdgeR - both are well established tools that are a part of the R programming language.
 
 <p align="center"><img src="./assets/dge_comparison.png" width="500" /></p> 
 
