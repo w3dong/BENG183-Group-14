@@ -16,13 +16,13 @@ Have you wondered about how different kinds of cells in our body are developed d
 :-------------------------:|:-------------------------:
 <img src="./assets/different-cell.png" width="500" /> | <img src="./assets/different-phenotype.png" width="500" /> 
 
-A fundamental concept underlying those phenomenon is the **Differential Expression of genes**. Genes are expressed differentially under different conditions to allow for different combinations of proteins and activation of certain biological pathways. Analyzing **differential expression of a set of genes** under different conditions can uncover the mystery behind development of stem cells and the cause of diseases [4]. 
+A fundamental concept underlying those phenomenon is the **Differential Expression of genes**. Genes are expressed differentially under different conditions to allow for different combinations of proteins and activation of certain biological pathways [4]. Analyzing **differential expression of a set of genes** under different conditions can uncover the mystery behind development of stem cells and the cause of diseases [4]. 
 
 Tools like **GSEA** can help us achieve this goal. However, before we dive deeper, let's start with some *basic concept review*. 
 
 #### 1) Differential Expression and Differential Analysis of Genes<a name="2311"></a>
 
-> **Differential Expression of genes** is *a evident change in read counts or expression level of genes under different conditions* [1]. 
+- **Differential Expression of genes** is *a evident change in read counts or expression level of genes under different conditions* [1]. 
 
 Let's make an analogy here to help to understand this concept better. Let's consider different kinds of genes as different kinds of the lego building block.
 
@@ -36,7 +36,7 @@ Lego cloud           |  Lego Cat
 
 In different biological conditions, the same gene will be expressed in different amounts based on needs. This phenomenon is the differential expression of the gene. 
 
-> **Differential analysis** is to *analyze significant change in gene expression level of **a gene** under different biological conditions*.[5]
+- **Differential analysis** is to *analyze significant change in gene expression level of **a gene** under different biological conditions*.[5]
 <p align="center"><img src="./assets/DGE.png" width="500" /></p> [5]
 
 As its name, differential analysis is computational method used to detect **evident change of gene expression of *a gene* under different conditions**, **or between two phenotype**[2]. It will require inputs like raw counts of gene expression in different conditions and conduct statistical analysis (like t-test) to check if the difference is statistically significant. 
